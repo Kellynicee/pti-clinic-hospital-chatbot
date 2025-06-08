@@ -11,6 +11,7 @@ function login() {
   localStorage.setItem('role', role);
   localStorage.setItem('username', user);
 
-  // Redirect to the correct folder based on role
+  // Redirect to the correct dashboard based on role
+  // Assuming login.html is in /home-page/, and dashboards are in /dashboards/
   window.location.href = '../dashboards/' + role + '_dashboard.html';
 }

@@ -5,13 +5,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Doctor Availability</title>
-    <link rel="stylesheet" href="/assets/css/doctor_availability.css" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
+    <link rel="stylesheet" href="../assets/css/doctor_availability.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
     <!-- Navbar -->
     <nav>
-      <a href="doctor_dashboard.html">Dashboard</a>
+      <a href="../dashboards/doctor_dashboard.html">Dashboard</a>
       <a href="view_appointments.html">View Appointments</a>
       <a href="doctor_availability.html">Set Availability</a>
       <a href="#" onclick="logout()">Logout</a>
@@ -35,6 +35,14 @@
       </div>
     </div>
 
-    <script src="assets/js/doctor_availability.js"></script>
+    <script src="../assets/js/doctor_availability.js"></script>
+
+    <!-- Logout function -->
+    <script>
+      function logout() {
+        localStorage.clear();
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
   </body>
 </html>

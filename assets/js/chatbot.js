@@ -2,7 +2,7 @@ const role = localStorage.getItem('role');
 const username = localStorage.getItem('username');
 
 if (!username || role !== 'patient') {
-  window.location.href = 'login.html';
+  window.location.href = '../home-page/login.html';
 }
 
 function logout() {

@@ -1,7 +1,7 @@
 const role = localStorage.getItem('role');
 const doctorName = localStorage.getItem('username');
 if (!doctorName || role !== 'doctor') {
-  window.location.href = 'login.html';
+  window.location.href = '../home-page/login.html';
 }
 
 const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');

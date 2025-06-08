@@ -1,8 +1,9 @@
 const role = localStorage.getItem('role');
 const username = localStorage.getItem('username');
 
+// ✅ Fix the login path (since doctor_availability.html is in /pages/)
 if (!username || role !== 'doctor') {
-  window.location.href = 'login.html';
+  window.location.href = '../home-page/login.html';
 }
 
 document.getElementById('doctor-name').textContent = username;
@@ -35,7 +36,8 @@ function saveAvailability() {
   document.getElementById('availableTime').value = '';
 }
 
+// ✅ Fix logout path to go back to login inside /home-page/
 function logout() {
   localStorage.clear();
-  window.location.href = 'login.html';
+  window.location.href = '../home-page/login.html';
 }

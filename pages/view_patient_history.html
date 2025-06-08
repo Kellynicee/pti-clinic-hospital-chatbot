@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Patient History</title>
-    <link rel="stylesheet" href="/assets/css/view_patient_history.css" />
-    <link rel="stylesheet" href="/assets/css/responsive.css" />
+
+    <!-- Font Awesome for icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/view_patient_history.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
     <!-- NAVBAR -->
     <nav>
       <div class="nav-container">
-        <a href="#" class="logo">Aisha Hospital</a>
+        <a href="../home-page/index.html" class="logo">PTI Clinic</a>
         <div class="menu-toggle" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </div>
         <div class="nav-links" id="navLinks">
-          <a href="login.html">Login</a>
+          <a href="../home-page/login.html">Login</a>
           <a href="chatbot.html">Chatbot</a>
           <a href="appointments.html">Appointments</a>
           <a href="prescriptions.html">Prescriptions</a>
@@ -78,6 +84,8 @@
 
     <!-- HTML2PDF Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
-    <script src="assets/js/view_patient_history.js"></script>
+
+    <!-- Your custom JS -->
+    <script src="../assets/js/view_patient_history.js"></script>
   </body>
 </html>
