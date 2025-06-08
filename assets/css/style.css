@@ -1,0 +1,185 @@
+/* Base Reset */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f6f8;
+  scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+  background: #007bff;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Navigation */
+nav {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: relative;
+}
+
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  padding: 10px 15px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px 20px;
+  align-items: center;
+  justify-content: center;
+  background: white;
+}
+
+.hero-text {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.hero-text h1 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 1.2em;
+  color: #666;
+}
+
+.hero-text a {
+  display: inline-block;
+  margin-top: 20px;
+  background: #007bff;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.hero-img {
+  flex: 1;
+  max-width: 500px;
+  padding: 10px;
+}
+
+.hero-img img {
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  text-align: center;
+  background: #fff;
+}
+
+section h2 {
+  color: #007bff;
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+/* Services */
+.services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.service-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-box i {
+  font-size: 2em;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* About */
+.about p {
+  max-width: 700px;
+  margin: auto;
+  color: #555;
+  line-height: 1.6em;
+}
+
+/* Contact */
+#contact p {
+  font-size: 1.1em;
+  color: #333;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #007bff;
+  color: white;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 100px; /* ✅ Increased height for visibility */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+/* Mobile screen: slightly smaller but still clear */
+@media (max-width: 400px) {
+  .logo-img {
+    height: 80px;
+  }
+}

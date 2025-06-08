@@ -1,0 +1,108 @@
+/* --- General Responsive Styles --- */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero {
+    flex-direction: column-reverse;
+    padding: 30px 10px;
+  }
+
+  .hero-text h1 {
+    font-size: 2em;
+  }
+
+  .hero-text p {
+    font-size: 1em;
+  }
+
+  .hero-img {
+    max-width: 100%;
+  }
+
+  /* Hamburger Icon */
+  .menu-toggle {
+    display: block;
+    cursor: pointer;
+    font-size: 1.6rem;
+    color: #007bff;
+  }
+
+  /* Hamburger Dropdown Menu */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    padding: 12px 16px;
+    border-radius: 8px;
+    flex-direction: column;
+    display: none;
+    z-index: 999;
+    animation: slideIn 0.3s ease forwards;
+    align-items: flex-end;
+    width: 200px;
+  }
+
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 0;
+    text-align: right;
+    width: 100%;
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    text-decoration: underline;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Optional nav wrap behavior */
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --- Login Page --- */
+@media (max-width: 400px) {
+  .login-box {
+    width: 90%;
+  }
+}
+
+/* --- Dashboard Buttons --- */
+@media (max-width: 600px) {
+  .dashboard button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+/* --- Chatbot Page --- */
+@media (max-width: 768px) {
+  .chat-container {
+    padding: 10px;
+  }
+
+  .chat-box {
+    height: 250px;
+  }
+}

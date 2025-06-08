@@ -1,0 +1,24 @@
+<!-- File: dashboards/patient_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Dashboard</title>
+    <link rel="stylesheet" href="/assets/css/patient_dashboard.css" />
+  </head>
+  <body>
+    <div class="dashboard">
+      <h2>
+        Welcome,
+        <span id="username"></span>
+      </h2>
+      <button onclick="goToAppointments()">Book Appointment</button>
+      <button onclick="goToChatbot()">Chat with PTI Clinic</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- ✅ FIXED: Correct path to your JS file -->
+    <script src="../assets/js/patient_dashboard.js"></script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chatbot - PTI Clinic</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/assets/css/chatbot.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="patient_dashboard.html">Dashboard</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="prescriptions.html">Prescriptions</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <div class="chat-container">
+      <h2 style="text-align: center">
+        <i class="fas fa-robot"></i>
+        PTI Clinic - Hospital Chatbot
+      </h2>
+      <div class="chat-box" id="chatBox"></div>
+      <input
+        type="text"
+        id="userInput"
+        placeholder="Describe your symptoms..."
+      />
+      <button onclick="sendMessage()">Send</button>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script src="../assets/js/chatbot.js"></script>
+  </body>
+</html>

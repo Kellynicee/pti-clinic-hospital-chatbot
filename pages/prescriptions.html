@@ -1,0 +1,60 @@
+<!-- File: prescriptions.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prescriptions</title>
+    <link rel="stylesheet" href="/assets/css/prescriptions.css" />
+    <link rel="stylesheet" href="/assets/css/responsive.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="patient_dashboard.html">Dashboard</a>
+      <a href="appointments.html">Appointments</a>
+      <a href="chatbot.html">Chatbot</a>
+      <a href="prescriptions.html">Prescriptions</a>
+      <a href="#" onclick="logout()">Logout</a>
+    </nav>
+
+    <div class="container" id="doctor-view" style="display: none">
+      <h2>Write a Prescription</h2>
+      <input type="text" id="patientName" placeholder="Patient Username" />
+      <textarea
+        id="prescriptionText"
+        rows="3"
+        placeholder="Enter prescription details"
+      ></textarea>
+      <button onclick="addPrescription()">Submit</button>
+      <div class="success" id="success-msg"></div>
+
+      <h3 style="margin-top: 40px">My Prescriptions</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Notes</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="doctorPrescriptions"></tbody>
+      </table>
+    </div>
+
+    <div class="container" id="patient-view" style="display: none">
+      <h2>My Prescriptions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Prescription</th>
+          </tr>
+        </thead>
+        <tbody id="prescriptionList"></tbody>
+      </table>
+    </div>
+    <script src="/assets/js/prescriptions.js"></script>
+  </body>
+</html>
