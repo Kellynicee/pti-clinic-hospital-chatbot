@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PTI Video Consultation</title>
+    <link rel="stylesheet" href="../assets/css/video_consultation.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="video-consultation-container">
+      <div class="consultation-card">
+        <div class="video-header">
+          <i class="fas fa-video"></i>
+          <h2>PTI Clinic Video Consultation</h2>
+        </div>
+
+        <div class="video-box">
+          <img src="../assets/images/video_mockup.gif" alt="Live Video Call" />
+        </div>
+
+        <div class="consultation-info">
+          <p>
+            <strong>Doctor:</strong>
+            Dr. Jane Okoro (General Medicine)
+          </p>
+          <p>
+            <strong>Status:</strong>
+            Connected
+          </p>
+          <p>
+            <strong>Timer:</strong>
+            <span id="timer">00:00</span>
+          </p>
+          <button onclick="endCall()">End Consultation</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/video_consultation.js"></script>
+  </body>
+</html>

@@ -1,0 +1,68 @@
+<!-- File: dashboards/nurse_dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nurse Dashboard – PTI Clinic</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="../assets/css/nurse_dashboard.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+  </head>
+  <body>
+    <!-- ✅ NAVBAR -->
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo.png"
+              alt="PTI Clinic Logo"
+              class="logo-img"
+            />
+          </a>
+        </div>
+        <div class="nav-links" id="navLinks">
+          <a href="nurse_dashboard.html">
+            <i class="fas fa-user-nurse"></i>
+            Dashboard
+          </a>
+          <a href="#" onclick="logout()">
+            <i class="fas fa-sign-out-alt"></i>
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ✅ MAIN -->
+    <div class="container">
+      <h2>
+        Welcome Nurse,
+        <span id="nurse-name"></span>
+      </h2>
+
+      <div class="form-box">
+        <h3>Record Patient Vitals</h3>
+        <input type="text" id="studentName" placeholder="Student Username" />
+        <input
+          type="text"
+          id="bp"
+          placeholder="Blood Pressure (e.g., 120/80)"
+        />
+        <input
+          type="text"
+          id="temperature"
+          placeholder="Temperature (e.g., 36.5°C)"
+        />
+        <button onclick="saveVitals()">Save Vitals</button>
+        <div class="success" id="success-msg"></div>
+      </div>
+    </div>
+
+    <script src="../assets/js/nurse_dashboard.js"></script>
+  </body>
+</html>

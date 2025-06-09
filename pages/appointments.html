@@ -4,13 +4,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Book Appointment</title>
+    <title>Book Appointment – PTI Clinic</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
     <link rel="stylesheet" href="../assets/css/appointment.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <style>
+      .smart-link-box {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .smart-btn {
+        display: inline-block;
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: background 0.3s ease;
+      }
+
+      .smart-btn i {
+        margin-right: 6px;
+      }
+
+      .smart-btn:hover {
+        background-color: #0056b3;
+      }
+    </style>
   </head>
   <body>
     <div class="form-box">
@@ -18,6 +44,16 @@
         <i class="fas fa-calendar-check"></i>
         Book Appointment
       </h2>
+
+      <!-- 🔗 Smart Appointment Button -->
+      <div class="smart-link-box">
+        <a href="smart_appointment.html" class="smart-btn">
+          <i class="fas fa-magic"></i>
+          Try Smart Appointment Booking
+        </a>
+      </div>
+
+      <!-- 📝 Classic Manual Form -->
       <div class="form-group">
         <label for="doctor">Doctor's Name:</label>
         <input type="text" id="doctor" placeholder="e.g., Dr. Smith" />

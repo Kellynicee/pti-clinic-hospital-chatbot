@@ -1,45 +1,30 @@
-<!-- File: dashboards/doctor_dashboard.html -->
+<!-- dashboards/doctor_dashboard.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Doctor Dashboard</title>
-    <!-- ✅ Fix path for GitHub Pages -->
+    <title>Doctor Dashboard - PTI Clinic</title>
     <link rel="stylesheet" href="../assets/css/doctor_dashboard.css" />
   </head>
   <body>
-    <!-- 🔹 Doctor Navbar -->
-    <nav style="background: #007bff; padding: 10px; text-align: center">
-      <a href="doctor_dashboard.html" style="color: white; margin-right: 15px">
-        Dashboard
-      </a>
-      <a href="../pages/view_appointments.html" style="color: white; margin-right: 15px">
-        View Appointments
-      </a>
-      <a href="../pages/doctor_availability.html" style="color: white; margin-right: 15px">
-        Set Availability
-      </a>
-      <a href="../pages/prescriptions.html" style="color: white; margin-right: 15px">
-        Prescriptions
-      </a>
-      <a href="#" onclick="logout()" style="color: white">Logout</a>
+    <nav>
+      <a href="doctor_dashboard.html">Dashboard</a>
+      <a href="../pages/view_appointments.html">View Appointments</a>
+      <a href="../pages/doctor_availability.html">Set Availability</a>
+      <a href="../pages/prescriptions.html">Prescriptions</a>
+      <a href="#" onclick="logout()">Logout</a>
     </nav>
 
-    <!-- 🔸 Page Header -->
-    <div class="header">
+    <div class="container">
       <h2>
         Welcome,
         <span id="user-name"></span>
         (Doctor)
       </h2>
+      <p>Manage appointments, set availability and view patients.</p>
     </div>
 
-    <p>
-      Access patient records, write prescriptions, and manage your schedule.
-    </p>
-
-    <!-- ✅ Fix JS path -->
     <script src="../assets/js/doctor_dashboard.js"></script>
   </body>
 </html>

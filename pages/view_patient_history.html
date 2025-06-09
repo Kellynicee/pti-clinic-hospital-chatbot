@@ -1,3 +1,4 @@
+<!-- File: pages/view_patient_history.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Patient History</title>
 
-    <!-- Font Awesome for icons -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -17,7 +17,7 @@
     <!-- NAVBAR -->
     <nav>
       <div class="nav-container">
-        <a href="../home-page/index.html" class="logo">PTI Clinic</a>
+        <a href="../index.html" class="logo">PTI Clinic</a>
         <div class="menu-toggle" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </div>
@@ -26,9 +26,6 @@
           <a href="chatbot.html">Chatbot</a>
           <a href="appointments.html">Appointments</a>
           <a href="prescriptions.html">Prescriptions</a>
-          <a href="#services">Services</a>
-          <a href="#about">About</a>
-          <a href="#contact">Contact</a>
         </div>
       </div>
     </nav>
@@ -79,13 +76,26 @@
           </thead>
           <tbody id="prescriptionTable"></tbody>
         </table>
+
+        <h3>Vitals</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Nurse</th>
+              <th>Blood Pressure</th>
+              <th>Temperature</th>
+            </tr>
+          </thead>
+          <tbody id="vitalsTable"></tbody>
+        </table>
       </div>
     </div>
 
-    <!-- HTML2PDF Library -->
+    <!-- HTML2PDF for exporting -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
 
-    <!-- Your custom JS -->
+    <!-- Custom JS -->
     <script src="../assets/js/view_patient_history.js"></script>
   </body>
 </html>

@@ -1,0 +1,85 @@
+<!-- File: pages/view_patient_profile.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Patient Medical Profile</title>
+    <link rel="stylesheet" href="../assets/css/view_patient_profile.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav-container">
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../assets/images/logo.png"
+              class="logo-img"
+              alt="PTI Clinic Logo"
+            />
+          </a>
+        </div>
+        <div class="nav-links">
+          <a href="../dashboards/nurse_dashboard.html">Dashboard</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container">
+      <h2>Patient Medical Profile</h2>
+
+      <div class="card-info">
+        <p>
+          <strong>Name:</strong>
+          <span id="patientName"></span>
+        </p>
+        <p>
+          <strong>Department:</strong>
+          <span id="patientDept"></span>
+        </p>
+        <p>
+          <strong>Section:</strong>
+          <span id="patientSection"></span>
+        </p>
+        <p>
+          <strong>Reference No:</strong>
+          <span id="patientRef"></span>
+        </p>
+      </div>
+
+      <div class="history-section">
+        <h3>Visit History</h3>
+
+        <div class="visit-history">
+          <h4>Appointments</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Doctor</th>
+              </tr>
+            </thead>
+            <tbody id="appointmentTable"></tbody>
+          </table>
+
+          <h4>Prescriptions</h4>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Doctor</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="prescriptionTable"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/js/view_patient_profile.js"></script>
+  </body>
+</html>

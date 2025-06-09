@@ -4,19 +4,52 @@ body {
   margin: 0;
 }
 
+/* ✅ NAVIGATION STYLING */
 nav {
   background: #007bff;
-  padding: 10px;
-  text-align: center;
+  padding: 10px 20px;
 }
 
-nav a {
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.logo img {
+  height: 60px;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
   color: white;
-  margin-right: 15px;
   text-decoration: none;
   font-weight: bold;
+  padding: 8px 10px;
 }
 
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+/* ✅ Toggle icon for mobile */
+.menu-toggle {
+  display: none;
+  font-size: 1.6rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* ✅ MAIN CONTAINER */
 .container {
   max-width: 800px;
   margin: 30px auto;
@@ -71,4 +104,36 @@ button {
   width: calc(33.33% - 10px);
   margin-right: 5px;
   display: inline-block;
+}
+
+/* ✅ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    background: #007bff;
+    position: absolute;
+    right: 20px;
+    top: 60px;
+    padding: 15px;
+    border-radius: 8px;
+    display: none;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .filters input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
 }

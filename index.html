@@ -5,19 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PTI Clinic Hospital Chatbot</title>
 
-    <!-- Font Awesome for icons -->
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <!-- AOS Animation CSS -->
+    <!-- AOS Animation -->
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
+    <!-- Your CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
+
   <body>
     <header>
       <h1>Welcome to PTI Clinic Hospital Chatbot</h1>
@@ -35,7 +37,6 @@
             />
           </a>
         </div>
-
         <div class="menu-toggle" onclick="toggleMenu()">
           <i class="fas fa-bars"></i>
         </div>
@@ -60,9 +61,9 @@
             <i class="fas fa-stethoscope"></i>
             Services
           </a>
-          <a href="#about">
+          <a href="#how-it-works">
             <i class="fas fa-info-circle"></i>
-            About
+            How It Works
           </a>
           <a href="#contact">
             <i class="fas fa-envelope"></i>
@@ -79,7 +80,7 @@
           Book appointments, chat with Aisha the AI assistant, and manage
           records anytime, anywhere.
         </p>
-        <a href="home-page/login.html">
+        <a href="home-page/login.html" class="cta-button">
           <i class="fas fa-sign-in-alt"></i>
           Start Now
         </a>
@@ -95,7 +96,9 @@
         <div class="service-box" data-aos="zoom-in" data-aos-delay="100">
           <i class="fas fa-comments"></i>
           <h3>AI Chatbot</h3>
-          <p>Ask Aisha your health questions and get instant, smart responses.</p>
+          <p>
+            Ask Aisha your health questions and get instant, smart responses.
+          </p>
         </div>
         <div class="service-box" data-aos="zoom-in" data-aos-delay="200">
           <i class="fas fa-calendar-check"></i>
@@ -110,31 +113,43 @@
       </div>
     </section>
 
-    <section id="about" class="about" data-aos="fade-up">
-      <h2>About Our System</h2>
-      <p>
-        This is a hospital management system project built with HTML, CSS, and
-        JavaScript to support doctors, patients, and admins through a smart
-        interface. It enables real-time appointment handling, symptom checking,
-        prescription management, and 24/7 chatbot support.
-      </p>
+    <!-- ✅ New section added based on PTI Clinic Flow -->
+    <section id="how-it-works" class="about" data-aos="fade-up">
+      <h2>How PTI Clinic Works</h2>
+      <ol style="max-width: 700px; margin: auto; text-align: left; color: #555">
+        <li>
+          Students and staff log in using their name and role (no registration).
+        </li>
+        <li>Students book appointments or chat with Aisha the assistant.</li>
+        <li>Nurse (optional) records vitals like BP and temperature.</li>
+        <li>Doctors view files and prescribe medication.</li>
+        <li>Pharmacists dispense the drugs and mark them as given.</li>
+        <li>Admin can monitor all user activities and reports.</li>
+      </ol>
     </section>
 
     <section id="contact" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>
         For support, reach us via email:
-        <strong>support@aishahospital.com</strong>
+        <strong>support@pti-clinic.com</strong>
       </p>
     </section>
 
-    <footer>&copy; 2025 PTI Clinic Hospital Chatbot | All Rights Reserved</footer>
+    <footer>
+      &copy;
+      <span id="year"></span>
+      PTI Clinic Hospital Chatbot | All Rights Reserved
+    </footer>
 
-    <!-- AOS -->
+    <!-- AOS Animation -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+      document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
+    <!-- JS Toggle Script -->
     <script src="assets/js/index.js"></script>
   </body>
 </html>

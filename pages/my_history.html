@@ -1,0 +1,101 @@
+<!-- File: pages/my_history.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Medical History – PTI Clinic</title>
+    <link rel="stylesheet" href="../assets/css/my_history.css" />
+    <link rel="stylesheet" href="../assets/css/responsive.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <a href="../index.html" class="logo">
+          <img
+            src="../assets/images/logo.png"
+            alt="PTI Logo"
+            class="logo-img"
+          />
+        </a>
+        <div class="nav-links">
+          <a href="appointments.html">Appointments</a>
+          <a href="prescriptions.html">Prescriptions</a>
+          <a href="chatbot.html">Chatbot</a>
+          <a href="#" onclick="logout()">Logout</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="container">
+      <h2>
+        <i class="fas fa-notes-medical"></i>
+        My Medical History
+      </h2>
+
+      <div id="report">
+        <section class="card-section">
+          <h3>
+            <i class="fas fa-calendar-check"></i>
+            Appointments
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Reason</th>
+              </tr>
+            </thead>
+            <tbody id="appointmentTable"></tbody>
+          </table>
+        </section>
+
+        <section class="card-section">
+          <h3>
+            <i class="fas fa-file-prescription"></i>
+            Prescriptions
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Doctor</th>
+                <th>Notes</th>
+              </tr>
+            </thead>
+            <tbody id="prescriptionTable"></tbody>
+          </table>
+        </section>
+
+        <section class="card-section">
+          <h3>
+            <i class="fas fa-heartbeat"></i>
+            Vitals
+          </h3>
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>BP</th>
+                <th>Temperature</th>
+              </tr>
+            </thead>
+            <tbody id="vitalsTable"></tbody>
+          </table>
+        </section>
+      </div>
+
+      <div class="actions">
+        <button onclick="downloadPDF()">Download as PDF</button>
+        <div id="success-msg" class="success"></div>
+      </div>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+    <script src="../assets/js/my_history.js"></script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pharmacist Dashboard – PTI Clinic</title>
+    <link rel="stylesheet" href="../assets/css/pharmacist_dashboard.css" />
+  </head>
+  <body>
+    <nav>
+      <h2>Pharmacist Dashboard</h2>
+      <button onclick="logout()">Logout</button>
+    </nav>
+
+    <div class="container">
+      <h3>Prescriptions To Dispense</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Patient</th>
+            <th>Date</th>
+            <th>Doctor</th>
+            <th>Prescription</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="prescriptionTable"></tbody>
+      </table>
+    </div>
+
+    <script src="../assets/js/pharmacist_dashboard.js"></script>
+  </body>
+</html>

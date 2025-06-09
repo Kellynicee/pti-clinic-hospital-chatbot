@@ -1,49 +1,105 @@
+<!-- File: home-page/login.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Login – PTI Clinic Chatbot</title>
+
+    <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+
+    <!-- AOS Animation -->
     <link
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
-    <!-- ✅ Fixed relative paths -->
+
+    <!-- ✅ GitHub-Compatible CSS Paths -->
     <link rel="stylesheet" href="../assets/css/login.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
+
   <body data-aos="zoom-in">
     <div class="login-box">
       <h2>
         <i class="fas fa-hospital-user"></i>
-        Login
+        PTI Clinic Login
       </h2>
+
+      <!-- Role Selection -->
       <div class="form-group">
-        <label for="role">Role:</label>
-        <select id="role">
+        <label for="role">Select Role:</label>
+        <select id="role" onchange="toggleStudentFields()">
           <option value="">-- Select Role --</option>
           <option value="admin">Admin</option>
           <option value="doctor">Doctor</option>
+          <option value="pharmacist">Pharmacist</option>
+          <option value="nurse">Nurse</option>
           <option value="patient">Patient</option>
         </select>
       </div>
+
+      <!-- Username -->
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" placeholder="Enter your username" />
+        <input
+          type="text"
+          id="username"
+          placeholder="Enter your PTI username"
+        />
       </div>
+
+      <!-- Student-only fields -->
+      <div id="studentFields" style="display: none">
+        <div class="form-group">
+          <label for="department">Department:</label>
+          <select id="department">
+            <option value="">-- Select Department --</option>
+            <option value="Computer Science">Computer Science</option>
+            <option value="SLT">Science Lab Tech (SLT)</option>
+            <option value="Petroleum Engineering">Petroleum Engineering</option>
+            <option value="Welding & Fabrication">Welding & Fabrication</option>
+            <option value="Electrical Engineering">
+              Electrical Engineering
+            </option>
+            <option value="Mechanical Engineering">
+              Mechanical Engineering
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="section">Section:</label>
+          <input type="text" id="section" placeholder="e.g. 2022/2025" />
+        </div>
+
+        <div class="form-group">
+          <label for="ref">Clinic Card Ref Number:</label>
+          <input type="text" id="ref" placeholder="e.g. 212" />
+        </div>
+      </div>
+
+      <!-- Login Button -->
       <button onclick="login()">Login</button>
       <div class="error" id="error-msg"></div>
     </div>
 
+    <!-- AOS JS -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
+      function toggleStudentFields() {
+        const role = document.getElementById('role').value;
+        document.getElementById('studentFields').style.display =
+          role === 'patient' ? 'block' : 'none';
+      }
     </script>
-    <!-- ✅ Fixed relative path -->
+
+    <!-- Login Logic -->
     <script src="../assets/js/login.js"></script>
   </body>
 </html>

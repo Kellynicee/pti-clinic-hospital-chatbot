@@ -1,13 +1,26 @@
 const role = localStorage.getItem('role');
 const username = localStorage.getItem('username');
 
-if (!username || role !== 'doctor') {
+// ✅ Allow both doctor and patient
+if (!username || (role !== 'doctor' && role !== 'patient')) {
   window.location.href = '../home-page/login.html';
 }
 
+// ✅ Show or hide filters depending on role
+window.onload = function () {
+  if (role === 'patient') {
+    // Auto fill and hide patient input
+    document.getElementById('patientName').value = username;
+    document.getElementById('patientName').disabled = true;
+    document.getElementById('doctorFilter').style.display = 'none';
+  }
+
+  loadPatientHistory();
+};
+
 function logout() {
   localStorage.clear();
-  window.location.href = 'login.html';
+  window.location.href = '../home-page/login.html';
 }
 
 function loadPatientHistory() {
@@ -35,7 +48,7 @@ function loadPatientHistory() {
   apptTable.innerHTML = '';
   rxTable.innerHTML = '';
 
-  // Filter appointments
+  // Appointments filter
   const apptFiltered = appointments.filter(
     (a) =>
       a.patient === patient &&
@@ -54,13 +67,15 @@ function loadPatientHistory() {
     });
   }
 
-  // Filter prescriptions
+  // Prescriptions filter
   const rxFiltered = prescriptions.filter(
     (p) =>
       p.patient === patient &&
       new Date(p.date) >= start &&
       new Date(p.date) <= end &&
-      (!doctorFilter || p.doctor.toLowerCase().includes(doctorFilter))
+      (role === 'patient' ||
+        !doctorFilter ||
+        p.doctor.toLowerCase().includes(doctorFilter))
   );
 
   if (rxFiltered.length === 0) {
