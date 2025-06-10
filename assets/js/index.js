@@ -31,3 +31,25 @@ window.addEventListener('scroll', () => {
     icon.classList.replace('fa-times', 'fa-bars');
   }
 });
+
+document.querySelectorAll('.nav-links a').forEach((link) => {
+  const protectedPages = [
+    'chatbot.html',
+    'appointments.html',
+    'prescriptions.html',
+  ];
+
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    if (protectedPages.some((page) => href.includes(page))) {
+      const username = localStorage.getItem('username');
+      const role = localStorage.getItem('role');
+
+      if (!username || !role) {
+        e.preventDefault();
+        alert('You must log in first!');
+        window.location.href = 'home-page/login.html';
+      }
+    }
+  });
+});

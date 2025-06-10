@@ -112,3 +112,9 @@ function editPrescription(index, newText) {
   prescriptions[index].notes = newText.trim();
   localStorage.setItem('prescriptions', JSON.stringify(prescriptions));
 }
+
+if (role === 'doctor') {
+  document.getElementById('doctor-view').style.display = 'block';
+} else if (role === 'patient') {
+  document.getElementById('patient-view').style.display = 'block';
+}

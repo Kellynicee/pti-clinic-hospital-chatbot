@@ -1,4 +1,4 @@
-<!-- File: prescriptions.html -->
+<!-- File: pages/prescriptions.html -->
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +8,24 @@
     <link rel="stylesheet" href="../assets/css/prescriptions.css" />
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
+
   <body>
+    <script>
+      const username = localStorage.getItem('username');
+      const role = localStorage.getItem('role');
+
+      if (!username || !role) {
+        alert('Please log in to access this page.');
+        window.location.href = '../home-page/login.html';
+      }
+
+      // Only allow patient or doctor roles
+      if (role !== 'doctor' && role !== 'patient') {
+        alert('You are not authorized to view this page.');
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
+
     <nav>
       <a href="patient_dashboard.html">Dashboard</a>
       <a href="appointments.html">Appointments</a>
@@ -17,6 +34,7 @@
       <a href="#" onclick="logout()">Logout</a>
     </nav>
 
+    <!-- Doctor View -->
     <div class="container" id="doctor-view" style="display: none">
       <h2>Write a Prescription</h2>
       <input type="text" id="patientName" placeholder="Patient Username" />
@@ -42,6 +60,7 @@
       </table>
     </div>
 
+    <!-- Patient View -->
     <div class="container" id="patient-view" style="display: none">
       <h2>My Prescriptions</h2>
       <table>
@@ -55,6 +74,15 @@
         <tbody id="prescriptionList"></tbody>
       </table>
     </div>
-    <script src="..//assets/js/prescriptions.js"></script>
+
+    <!-- Add logout function if not already included -->
+    <script>
+      function logout() {
+        localStorage.clear();
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
+
+    <script src="../assets/js/prescriptions.js"></script>
   </body>
 </html>

@@ -39,6 +39,15 @@
     </style>
   </head>
   <body>
+    <script>
+      const username = localStorage.getItem('username');
+      const role = localStorage.getItem('role');
+
+      if (!username || !role) {
+        alert('Please log in to access this page.');
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
     <div class="form-box">
       <h2>
         <i class="fas fa-calendar-check"></i>

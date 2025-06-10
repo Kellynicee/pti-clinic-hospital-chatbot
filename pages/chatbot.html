@@ -13,6 +13,15 @@
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
+    <script>
+      const username = localStorage.getItem('username');
+      const role = localStorage.getItem('role');
+
+      if (!username || !role) {
+        alert('Please log in to access this page.');
+        window.location.href = '../home-page/login.html';
+      }
+    </script>
     <nav>
       <a href="../dashboards/patient_dashboard.html">Dashboard</a>
       <a href="appointments.html">Appointments</a>
