@@ -119,22 +119,19 @@
       </ol>
     </section>
 
-    <section class="stats" data-aos="fade-up">
-      <h2>Platform Stats</h2>
+    <section id="stats" data-aos="fade-up">
+      <h2>PTI Clinic In Numbers</h2>
       <div class="stats-grid">
-        <div>
-          <i class="fas fa-users"></i>
-          <h3>3,000+</h3>
-          <p>Students & Staff Served</p>
-        </div>
-        <div>
-          <i class="fas fa-calendar-check"></i>
-          <h3>800+</h3>
+        <div class="stat-box">
+          <span class="counter" data-count="500">0</span>
           <p>Appointments Booked</p>
         </div>
-        <div>
-          <i class="fas fa-file-prescription"></i>
-          <h3>600+</h3>
+        <div class="stat-box">
+          <span class="counter" data-count="230">0</span>
+          <p>Students Treated</p>
+        </div>
+        <div class="stat-box">
+          <span class="counter" data-count="120">0</span>
           <p>Prescriptions Issued</p>
         </div>
       </div>
@@ -160,19 +157,26 @@
       </div>
     </section>
 
-    <section class="faq" data-aos="fade-up">
-      <h2>FAQs</h2>
-      <details>
-        <summary>Do I need to register?</summary>
-        <p>No, just enter your name and role (student/staff).</p>
-      </details>
-      <details>
-        <summary>How do I get my prescription?</summary>
-        <p>
-          Doctors will issue it after consultation. You can download it from
-          your dashboard.
-        </p>
-      </details>
+    <section id="faq" data-aos="fade-up">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-item">
+        <button class="faq-question">How do I log in?</button>
+        <div class="faq-answer">
+          Just enter your name and select your role. No password needed.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Who can use this clinic?</button>
+        <div class="faq-answer">
+          Students, staff, doctors, nurses, pharmacists, and admin.
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question">Can I view past prescriptions?</button>
+        <div class="faq-answer">
+          Yes, go to the Prescriptions page after login to view all records.
+        </div>
+      </div>
     </section>
 
     <section id="contact" data-aos="fade-up">
@@ -182,6 +186,17 @@
         <strong>support@pti-clinic.com</strong>
       </p>
     </section>
+
+    <!-- Chat Pop-up -->
+    <div id="chat-popup">
+      <div id="chat-header">Need help? Ask Aisha!</div>
+      <div id="chat-body">
+        <p class="bot-msg">Hi! I'm Aisha 🤖. How can I assist you today?</p>
+      </div>
+      <input type="text" placeholder="Type your question..." />
+      <button onclick="sendChat()">Send</button>
+    </div>
+    <div id="chat-icon" onclick="toggleChat()">💬</div>
 
     <footer>
       &copy;
