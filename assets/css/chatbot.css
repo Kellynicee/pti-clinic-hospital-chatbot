@@ -67,3 +67,32 @@ button {
 button:hover {
   background: #0056b3;
 }
+
+/* Dark Mode Styles */
+body.dark {
+  background: #1e1e1e;
+  color: white;
+}
+
+body.dark .chat-container {
+  background: #2c2c2c;
+}
+
+body.dark .chat-box {
+  background: #3a3a3a;
+  color: white;
+}
+
+#suggestions button {
+  margin-right: 5px;
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border: none;
+  background: #e0e0e0;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#suggestions button:hover {
+  background: #d4d4d4;
+}

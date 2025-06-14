@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
+    <script src="../assets/js/chatbot.js" defer></script>
+
     <nav>
       <a href="../dashboards/patient_dashboard.html">Dashboard</a>
       <a href="appointments.html">Appointments</a>
@@ -22,21 +24,24 @@
     </nav>
 
     <div class="chat-container">
-      <h2 style="text-align: center">
+      <h2 style="text-align: center; margin-bottom: 15px">
         <i class="fas fa-robot"></i>
-        PTI Clinic - Hospital Chatbot
+        PTI Clinic Chatbot
       </h2>
-      <div class="chat-box" id="chatBox"></div>
-      <input
-        type="text"
-        id="userInput"
-        placeholder="Describe your symptoms..."
-      />
-      <button id="sendBtn">Send</button>
-    </div>
 
-    <!-- Always include scripts at the bottom with defer -->
-    <script src="../assets/js/main.js" defer></script>
-    <script src="../assets/js/chatbot.js" defer></script>
+      <div class="chat-box" id="chatBox"></div>
+
+      <div style="margin-top: 10px">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type your symptoms here..."
+        />
+        <div style="display: flex; gap: 5px; margin-top: 5px">
+          <button onclick="sendMessage()">Send</button>
+          <button id="micBtn"><i class="fas fa-microphone"></i></button>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,14 +1,19 @@
-// Redirect if not logged in as patient
-const role = localStorage.getItem('role');
 const username = localStorage.getItem('username');
+const role = localStorage.getItem('role');
 
 if (!username || role !== 'patient') {
+  alert('Please log in as a patient to access this page.');
   window.location.href = '../home-page/login.html';
 }
 
 function logout() {
   localStorage.clear();
   window.location.href = '../home-page/login.html';
+}
+
+function quickSend(text) {
+  document.getElementById('userInput').value = text;
+  sendMessage();
 }
 
 const responses = {
@@ -60,7 +65,7 @@ function sendMessage() {
   appendMessage('You', userText, 'user-msg');
   input.value = '';
 
-  appendMessage('PTI Clinic', 'Typing...', 'bot-msg'); // fake typing
+  appendMessage('PTI Clinic', 'Typing...', 'bot-msg');
 
   setTimeout(() => {
     const botReply = getOfflineResponse(userText);
@@ -93,19 +98,14 @@ function getOfflineResponse(message) {
 
 function scrollChatToBottom() {
   const chatBox = document.getElementById('chatBox');
-  chatBox.scrollTo({
-    top: chatBox.scrollHeight,
-    behavior: 'smooth',
-  });
+  chatBox.scrollTo({ top: chatBox.scrollHeight, behavior: 'smooth' });
 }
 
-// Focus input on load
-window.onload = function () {
+window.onload = () => {
   document.getElementById('userInput').focus();
 };
 
-// Allow pressing Enter to send message
-document.getElementById('userInput').addEventListener('keypress', function (e) {
+document.getElementById('userInput').addEventListener('keypress', (e) => {
   if (e.key === 'Enter') {
     sendMessage();
   }

@@ -15,11 +15,10 @@
       href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
       rel="stylesheet"
     />
-    <!-- Your CSS -->
+    <!-- Your Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/responsive.css" />
   </head>
-
   <body>
     <header>
       <h1>Welcome to PTI Clinic Hospital Chatbot</h1>
@@ -76,10 +75,7 @@
     <section class="hero" data-aos="fade-up">
       <div class="hero-text">
         <h1>Your Virtual Health Companion</h1>
-        <p>
-          Book appointments, chat with Aisha the AI assistant, and manage
-          records anytime, anywhere.
-        </p>
+        <p>Book appointments, chat with Aisha, and manage records anytime.</p>
         <a href="home-page/login.html" class="cta-button">
           <i class="fas fa-sign-in-alt"></i>
           Start Now
@@ -96,42 +92,93 @@
         <div class="service-box" data-aos="zoom-in" data-aos-delay="100">
           <i class="fas fa-comments"></i>
           <h3>AI Chatbot</h3>
-          <p>
-            Ask Aisha your health questions and get instant, smart responses.
-          </p>
+          <p>Ask health questions and get instant responses.</p>
         </div>
         <div class="service-box" data-aos="zoom-in" data-aos-delay="200">
           <i class="fas fa-calendar-check"></i>
-          <h3>Appointment Booking</h3>
-          <p>Book available doctors based on your symptoms or preferences.</p>
+          <h3>Book Appointments</h3>
+          <p>Book doctors by symptoms or preference.</p>
         </div>
         <div class="service-box" data-aos="zoom-in" data-aos-delay="300">
           <i class="fas fa-prescription-bottle-alt"></i>
-          <h3>View Prescriptions</h3>
-          <p>Access and download prescriptions given by your doctor.</p>
+          <h3>Prescriptions</h3>
+          <p>Access prescriptions given by your doctor.</p>
         </div>
       </div>
     </section>
 
-    <!-- ✅ New section added based on PTI Clinic Flow -->
     <section id="how-it-works" class="about" data-aos="fade-up">
       <h2>How PTI Clinic Works</h2>
-      <ol style="max-width: 700px; margin: auto; text-align: left; color: #555">
-        <li>
-          Students and staff log in using their name and role (no registration).
-        </li>
-        <li>Students book appointments or chat with Aisha the assistant.</li>
-        <li>Nurse (optional) records vitals like BP and temperature.</li>
-        <li>Doctors view files and prescribe medication.</li>
-        <li>Pharmacists dispense the drugs and mark them as given.</li>
-        <li>Admin can monitor all user activities and reports.</li>
+      <ol style="max-width: 700px; margin: auto; text-align: left">
+        <li>Students/staff login with name & role.</li>
+        <li>They book appointments or chat with Aisha.</li>
+        <li>Nurse checks vitals (optional).</li>
+        <li>Doctors prescribe drugs.</li>
+        <li>Pharmacists dispense them.</li>
+        <li>Admin monitors activities.</li>
       </ol>
+    </section>
+
+    <section class="stats" data-aos="fade-up">
+      <h2>Platform Stats</h2>
+      <div class="stats-grid">
+        <div>
+          <i class="fas fa-users"></i>
+          <h3>3,000+</h3>
+          <p>Students & Staff Served</p>
+        </div>
+        <div>
+          <i class="fas fa-calendar-check"></i>
+          <h3>800+</h3>
+          <p>Appointments Booked</p>
+        </div>
+        <div>
+          <i class="fas fa-file-prescription"></i>
+          <h3>600+</h3>
+          <p>Prescriptions Issued</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" data-aos="fade-up">
+      <h2>What Our Users Say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-box">
+          <p>
+            "This clinic chatbot saved me time. I booked and got my prescription
+            in minutes!"
+          </p>
+          <h4>- Daniel, Student</h4>
+        </div>
+        <div class="testimonial-box">
+          <p>
+            "Aisha is very smart. The process is so simple. PTI Clinic is now
+            efficient."
+          </p>
+          <h4>- Nurse Joy</h4>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" data-aos="fade-up">
+      <h2>FAQs</h2>
+      <details>
+        <summary>Do I need to register?</summary>
+        <p>No, just enter your name and role (student/staff).</p>
+      </details>
+      <details>
+        <summary>How do I get my prescription?</summary>
+        <p>
+          Doctors will issue it after consultation. You can download it from
+          your dashboard.
+        </p>
+      </details>
     </section>
 
     <section id="contact" data-aos="fade-up">
       <h2>Contact Us</h2>
       <p>
-        For support, reach us via email:
+        For support, email:
         <strong>support@pti-clinic.com</strong>
       </p>
     </section>
@@ -139,17 +186,14 @@
     <footer>
       &copy;
       <span id="year"></span>
-      PTI Clinic Hospital Chatbot | All Rights Reserved
+      PTI Clinic | All Rights Reserved
     </footer>
 
-    <!-- AOS Animation -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
     <script>
       AOS.init();
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
-
-    <!-- JS Toggle Script -->
     <script src="assets/js/index.js"></script>
   </body>
 </html>

@@ -177,6 +177,67 @@ footer {
   object-fit: contain;
 }
 
+/* Stats */
+.stats {
+  background: #f8f9fa;
+  padding: 60px 20px;
+  text-align: center;
+}
+.stats-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+.stats-grid div {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.stats-grid i {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+/* Testimonials */
+.testimonials {
+  background: #fff;
+  padding: 60px 20px;
+}
+.testimonial-grid {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.testimonial-box {
+  background: #f4f6f8;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 300px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* FAQ */
+.faq {
+  background: #f8f9fa;
+  padding: 60px 20px;
+}
+.faq details {
+  background: white;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.faq summary {
+  font-weight: bold;
+  color: #007bff;
+}
+
 /* Mobile screen: slightly smaller but still clear */
 @media (max-width: 400px) {
   .logo-img {
