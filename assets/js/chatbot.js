@@ -7,7 +7,7 @@ if (!username || role !== 'patient') {
 
 function logout() {
   localStorage.clear();
-  window.location.href = '../home-page/login.html'; // adjust path if needed
+  window.location.href = '../home-page/login.html';
 }
 
 const responses = {
@@ -51,29 +51,6 @@ const responses = {
     'Isolate, monitor symptoms, and test if possible. Rest and hydrate. Seek help if breathing difficulty develops.',
 };
 
-function sendMessage() {
-  const input = document.getElementById('userInput');
-  const chatBox = document.getElementById('chatBox');
-  const userText = input.value.trim();
-
-  if (!userText) return;
-
-  appendMessage('You', userText, 'user-msg');
-  input.value = '';
-
-  setTimeout(() => {
-    const botReply = getOfflineResponse(userText);
-    appendMessage('PTI Clinic', botReply, 'bot-msg');
-  }, 500);
-}
-
-function appendMessage(sender, message, className) {
-  const chatBox = document.getElementById('chatBox');
-  const msg = `<p class="${className}"><strong>${sender}:</strong> ${message}</p>`;
-  chatBox.innerHTML += msg;
-  chatBox.scrollTop = chatBox.scrollHeight;
-}
-
 function getOfflineResponse(message) {
   const found = Object.keys(responses).filter((key) =>
     message.toLowerCase().includes(key)
@@ -87,3 +64,31 @@ function getOfflineResponse(message) {
     .map((symptom) => `For <strong>${symptom}</strong>: ${responses[symptom]}`)
     .join('<br>');
 }
+
+function appendMessage(sender, message, className) {
+  const chatBox = document.getElementById('chatBox');
+  const msg = `<p class="${className}"><strong>${sender}:</strong> ${message}</p>`;
+  chatBox.innerHTML += msg;
+  chatBox.scrollTop = chatBox.scrollHeight;
+}
+
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const userText = input.value.trim();
+
+  if (!userText) return;
+
+  appendMessage('You', userText, 'user-msg');
+  input.value = '';
+
+  setTimeout(() => {
+    const botReply = getOfflineResponse(userText);
+    appendMessage('PTI Clinic', botReply, 'bot-msg');
+  }, 500);
+}
+
+// Bind send button after DOM loads
+document.addEventListener('DOMContentLoaded', () => {
+  const sendBtn = document.getElementById('sendBtn');
+  sendBtn.addEventListener('click', sendMessage);
+});

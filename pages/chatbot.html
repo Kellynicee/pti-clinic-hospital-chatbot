@@ -13,15 +13,6 @@
     <link rel="stylesheet" href="../assets/css/responsive.css" />
   </head>
   <body>
-    <script>
-      const username = localStorage.getItem('username');
-      const role = localStorage.getItem('role');
-
-      if (!username || !role) {
-        alert('Please log in to access this page.');
-        window.location.href = '../home-page/login.html';
-      }
-    </script>
     <nav>
       <a href="../dashboards/patient_dashboard.html">Dashboard</a>
       <a href="appointments.html">Appointments</a>
@@ -41,10 +32,11 @@
         id="userInput"
         placeholder="Describe your symptoms..."
       />
-      <button onclick="sendMessage()">Send</button>
+      <button id="sendBtn">Send</button>
     </div>
 
-    <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/chatbot.js"></script>
+    <!-- Always include scripts at the bottom with defer -->
+    <script src="../assets/js/main.js" defer></script>
+    <script src="../assets/js/chatbot.js" defer></script>
   </body>
 </html>
