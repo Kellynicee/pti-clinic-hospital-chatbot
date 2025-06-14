@@ -1,3 +1,4 @@
+// Redirect if not logged in as patient
 const role = localStorage.getItem('role');
 const username = localStorage.getItem('username');
 
@@ -51,6 +52,31 @@ const responses = {
     'Isolate, monitor symptoms, and test if possible. Rest and hydrate. Seek help if breathing difficulty develops.',
 };
 
+function sendMessage() {
+  const input = document.getElementById('userInput');
+  const userText = input.value.trim();
+  if (!userText) return;
+
+  appendMessage('You', userText, 'user-msg');
+  input.value = '';
+
+  appendMessage('PTI Clinic', 'Typing...', 'bot-msg'); // fake typing
+
+  setTimeout(() => {
+    const botReply = getOfflineResponse(userText);
+    const chatBox = document.getElementById('chatBox');
+    chatBox.lastElementChild.innerHTML = `<strong>PTI Clinic:</strong> ${botReply}`;
+    scrollChatToBottom();
+  }, 700);
+}
+
+function appendMessage(sender, message, className) {
+  const chatBox = document.getElementById('chatBox');
+  const msg = `<p class="${className}"><strong>${sender}:</strong> ${message}</p>`;
+  chatBox.innerHTML += msg;
+  scrollChatToBottom();
+}
+
 function getOfflineResponse(message) {
   const found = Object.keys(responses).filter((key) =>
     message.toLowerCase().includes(key)
@@ -65,30 +91,22 @@ function getOfflineResponse(message) {
     .join('<br>');
 }
 
-function appendMessage(sender, message, className) {
+function scrollChatToBottom() {
   const chatBox = document.getElementById('chatBox');
-  const msg = `<p class="${className}"><strong>${sender}:</strong> ${message}</p>`;
-  chatBox.innerHTML += msg;
-  chatBox.scrollTop = chatBox.scrollHeight;
+  chatBox.scrollTo({
+    top: chatBox.scrollHeight,
+    behavior: 'smooth',
+  });
 }
 
-function sendMessage() {
-  const input = document.getElementById('userInput');
-  const userText = input.value.trim();
+// Focus input on load
+window.onload = function () {
+  document.getElementById('userInput').focus();
+};
 
-  if (!userText) return;
-
-  appendMessage('You', userText, 'user-msg');
-  input.value = '';
-
-  setTimeout(() => {
-    const botReply = getOfflineResponse(userText);
-    appendMessage('PTI Clinic', botReply, 'bot-msg');
-  }, 500);
-}
-
-// Bind send button after DOM loads
-document.addEventListener('DOMContentLoaded', () => {
-  const sendBtn = document.getElementById('sendBtn');
-  sendBtn.addEventListener('click', sendMessage);
+// Allow pressing Enter to send message
+document.getElementById('userInput').addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    sendMessage();
+  }
 });
